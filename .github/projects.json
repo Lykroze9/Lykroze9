@@ -1,10 +1,1 @@
-{
-  "DesktopDiag|claude-skill": {
-    "url": "https://github.com/Lykroze9/DesktopDiag/tree/main/skills/desktopdiag",
-    "description": "Claude Code skill: ask \"check my PC\" and Claude reads your Windows logs and disks (read-only), explains blue screens, GPU driver resets, SSD wear and hardware errors, scores your PC and schedules follow-up checks. English or French."
-  },
-  "DesktopDiag|windows-app": {
-    "url": "https://github.com/Lykroze9/DesktopDiag",
-    "description": "Portable Windows app (1 MB, nothing to install): one-click PC health check with a score out of 100, step-by-step advice, optional deep scan (SSD health, blue screen analysis, startup time). English or French."
-  }
-}
+{}
