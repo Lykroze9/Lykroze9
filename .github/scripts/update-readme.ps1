@@ -12,13 +12,20 @@ $repos = @(($json -join "`n") | ConvertFrom-Json | ForEach-Object { $_ }) | Wher
     -not $_.fork -and -not $_.archived -and -not $_.private -and $_.name -ne $Owner
 }
 
+# Optional per-section overrides (.github/projects.json), keyed "<repo>|<topic>": { "url": ..., "description": ... }.
+# Lets one repo show a different link and text in each section (e.g. a skill folder vs the app download).
+$overridesFile = Join-Path $PSScriptRoot '..\projects.json'
+$overrides = if (Test-Path $overridesFile) { [IO.File]::ReadAllText((Resolve-Path $overridesFile).Path, [Text.Encoding]::UTF8) | ConvertFrom-Json } else { $null }
+
 function Get-Table($topic, $empty) {
     $list = @($repos | Where-Object { $_.topics -contains $topic } | Sort-Object name)
     if (-not $list.Count) { return $empty }
     $rows = @('| Project | What it does |', '|---|---|')
     foreach ($r in $list) {
-        $desc = if ($r.description) { ($r.description -replace '\|', '\|') } else { '' }
-        $rows += "| [**$($r.name)**]($($r.html_url)) | $desc |"
+        $o = if ($overrides) { $overrides."$($r.name)|$topic" } else { $null }
+        $url = if ($o -and $o.url) { $o.url } else { $r.html_url }
+        $text = if ($o -and $o.description) { $o.description } elseif ($r.description) { $r.description } else { '' }
+        $rows += "| [**$($r.name)**]($url) | $($text -replace '\|', '\|') |"
     }
     return ($rows -join "`n")
 }
