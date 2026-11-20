@@ -8,7 +8,7 @@ I build small, practical tools: skills that extend Claude Code, and Windows apps
 <!-- skills:start -->
 | Project | What it does |
 |---|---|
-| [**DesktopDiag**](https://github.com/Lykroze9/DesktopDiag) | Read-only Windows PC health check skill for Claude Code: BSOD, GPU driver resets, SSD wear, hardware errors, history and follow-ups. Reports in English or French. |
+| [**DesktopDiag**](https://github.com/Lykroze9/DesktopDiag) | Read-only Windows PC health check: a Claude Code skill and a standalone Windows app (no Claude needed). Blue screens, GPU driver resets, SSD wear, hardware errors, scored reports in English or French. |
 <!-- skills:end -->
 
 ### 🖥️ Windows apps
@@ -16,7 +16,7 @@ I build small, practical tools: skills that extend Claude Code, and Windows apps
 <!-- apps:start -->
 | Project | What it does |
 |---|---|
-| [**DesktopDiag**](https://github.com/Lykroze9/DesktopDiag) | Read-only Windows PC health check skill for Claude Code: BSOD, GPU driver resets, SSD wear, hardware errors, history and follow-ups. Reports in English or French. |
+| [**DesktopDiag**](https://github.com/Lykroze9/DesktopDiag) | Read-only Windows PC health check: a Claude Code skill and a standalone Windows app (no Claude needed). Blue screens, GPU driver resets, SSD wear, hardware errors, scored reports in English or French. |
 <!-- apps:end -->
 
 ---
